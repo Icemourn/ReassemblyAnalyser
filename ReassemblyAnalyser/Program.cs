@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NLua;
 using ReassemblyAnalyser.Data;
 using ReassemblyAnalyser.IO;
 using ReassemblyAnalyser.Ships;

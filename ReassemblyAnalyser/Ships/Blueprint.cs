@@ -1,5 +1,4 @@
-﻿using NLua;
-using ReassemblyAnalyser.Data;
+﻿using ReassemblyAnalyser.Data;
 using ReassemblyAnalyser.Data.DataStruct;
 using ReassemblyAnalyser.IO;
 using System;

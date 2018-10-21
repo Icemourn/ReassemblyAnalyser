@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReassemblyAnalyser", "ReassemblyAnalyser\ReassemblyAnalyser.csproj", "{3094505A-6904-43F5-A427-2C4448E6EB64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsonLib", "..\LsonLib\Src\LsonLib.csproj", "{363758F5-F47A-4DBD-A602-E0D66FD5AD9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3094505A-6904-43F5-A427-2C4448E6EB64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3094505A-6904-43F5-A427-2C4448E6EB64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3094505A-6904-43F5-A427-2C4448E6EB64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363758F5-F47A-4DBD-A602-E0D66FD5AD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363758F5-F47A-4DBD-A602-E0D66FD5AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363758F5-F47A-4DBD-A602-E0D66FD5AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363758F5-F47A-4DBD-A602-E0D66FD5AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
