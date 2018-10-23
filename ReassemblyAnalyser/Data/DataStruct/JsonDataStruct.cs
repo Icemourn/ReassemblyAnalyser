@@ -47,5 +47,10 @@ namespace ReassemblyAnalyser.Data.DataStruct
         {
             return InternalToken.ToString();
         }
+
+        public override string Serialize()
+        {
+            return InternalToken.ToString();
+        }
     }
 }

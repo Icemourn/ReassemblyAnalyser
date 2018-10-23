@@ -1,5 +1,4 @@
-﻿using NLua;
-using ReassemblyAnalyser.Data;
+﻿using ReassemblyAnalyser.Data;
 using ReassemblyAnalyser.Data.DataStruct;
 using ReassemblyAnalyser.IO;
 using System;
@@ -16,14 +15,14 @@ namespace ReassemblyAnalyser.Ships
         public string FilePath { get; set; }
         private string RawData { get; set; }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public int Cost { get; private set; }
 
-        public Blueprint (string name, int cost, string blueprintData)
+        public Blueprint (string name, int cost, string sourceData)
         {
             Name = name;
             Cost = cost;
-            RawData = blueprintData;
+            RawData = sourceData;
         }
 
         public static Blueprint FromTable(IDataStruct blueprintTable)
@@ -41,7 +40,7 @@ namespace ReassemblyAnalyser.Ships
             }
 
             Console.WriteLine($"Succesfully parsed ship {name} with a cost of {cost}");
-            return new Blueprint(name, cost, blueprintTable.ToString());
+            return new Blueprint(name, cost, blueprintTable.Serialize ());
         }
 
         public static List<Blueprint> FromFile(string path)
@@ -58,6 +57,7 @@ namespace ReassemblyAnalyser.Ships
                     {
                         results.Add(FromTable(blueprintTable));
                     }
+                    break;
                 }
                 return results;
             }

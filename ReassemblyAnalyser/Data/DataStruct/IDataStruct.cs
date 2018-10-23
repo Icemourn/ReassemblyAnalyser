@@ -14,5 +14,7 @@ namespace ReassemblyAnalyser.Data.DataStruct
 
         IDataStruct Get(object identifier);
         object GetValue(object identifier);
+
+        string Serialize();
     }
 }

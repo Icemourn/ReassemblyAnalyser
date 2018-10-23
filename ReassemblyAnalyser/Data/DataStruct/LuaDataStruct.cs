@@ -1,4 +1,5 @@
 ﻿using NLua;
+using ReassemblyAnalyser.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,50 +51,9 @@ namespace ReassemblyAnalyser.Data.DataStruct
             }
         }
 
-        private string TableToString(LuaTable table, int indentionDepth = 0)
+        public override string Serialize()
         {
-            // I'm not gonna begin to act like I know what is going on here. I just stole it from https://gist.github.com/justnom/9816256 and ported it to C#.
-
-            // Convert a lua table into a lua syntactically correct string
-            string result = "{";
-            string indent = "";
-            for (int i = 0; i < indentionDepth; i++)
-            {
-                indent += "\t";
-            }
-            foreach (KeyValuePair<object, object> pair in table)
-            {
-                // Check the key type(ignore any numerical keys - assume its an array)
-                if (pair.Key is string strKey)
-                {
-                    result +=  $"{indentionDepth}{strKey}=";
-                }
-
-                // Check the value type
-                if (pair.Value is LuaTable innerTable)
-                {
-                    result += indentionDepth + TableToString(innerTable, indentionDepth + 1) + "\n";
-                }
-                else if (pair.Value is bool boolValue)
-                {
-                    result += indentionDepth + boolValue.ToString() + "\n";
-                } else
-                {
-                    result += $"{indentionDepth}\"{pair.Value}\"\n";
-                }
-            }
-            result += ",";
-            // Remove leading commas from the result
-            if (result != "")
-            {
-                result = result.Substring(0, result.Length - 1);
-            }
-            return result + "}";
-        }
-
-        public override string ToString()
-        {
-            return TableToString(InternalTable);
+            return LuaSerializer.SerializeTable(InternalTable);
         }
     }
 }

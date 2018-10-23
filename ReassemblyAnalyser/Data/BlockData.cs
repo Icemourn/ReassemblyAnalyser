@@ -14,23 +14,25 @@ namespace ReassemblyAnalyser.Data
         public static string ShipCostFilePath = "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Reassembly\\data\\blockstats.json";
         private static Dictionary<int, int> BlockCost { get; set; }
 
+        private static void InitData()
+        {
+            BlockCost = new Dictionary<int, int>();
+            var data = DataParse.FromFile(ShipCostFilePath);
+
+            foreach (IDataStruct entry in data)
+            {
+                var value = entry.GetValue("ident").ToString();
+                int blockId = int.Parse(value);
+                IDataStruct costToken = entry.Get("deadliness");
+                int cost = costToken.IsNull ? 0 : int.Parse(costToken.ToString());
+                BlockCost.Add(blockId, cost);
+            }
+        }
+
         public static int GetBlockCost(int id)
         {
             if (BlockCost == null)
-            {
-                BlockCost = new Dictionary<int, int>();
-                var data = DataParse.FromFile(ShipCostFilePath);
-
-                foreach (IDataStruct entry in data)
-                {
-                    var value = entry.GetValue("ident").ToString();
-                    int blockId = int.Parse (value);
-                    IDataStruct costToken = entry.Get("deadliness");
-                    int cost = costToken.IsNull ? 0 : int.Parse(costToken.ToString());
-                    BlockCost.Add(blockId, cost);
-                }
-
-            }
+                InitData();
 
             return BlockCost[id];
         }

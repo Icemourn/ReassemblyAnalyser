@@ -8,6 +8,8 @@ namespace ReassemblyAnalyser.Ships
 {
     public interface IAgent
     {
+        string Name { get; set; }
+
         string FilePath { get; set; }
 
         string GetRawData();

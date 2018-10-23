@@ -22,5 +22,8 @@ namespace ReassemblyAnalyser.Data.DataStruct
         {
             return new DataStructEnumerator(this);
         }
+
+        public abstract string Serialize();
+
     }
 }
