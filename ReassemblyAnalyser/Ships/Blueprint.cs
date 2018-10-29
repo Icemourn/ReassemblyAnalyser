@@ -57,7 +57,6 @@ namespace ReassemblyAnalyser.Ships
                     {
                         results.Add(FromTable(blueprintTable));
                     }
-                    break;
                 }
                 return results;
             }

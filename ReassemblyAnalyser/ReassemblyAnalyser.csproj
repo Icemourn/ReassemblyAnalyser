@@ -59,12 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\BlockData.cs" />
+    <Compile Include="Data\Config.cs" />
     <Compile Include="Data\CVarsBackup.cs" />
     <Compile Include="Data\DataStruct\DataStructBase.cs" />
     <Compile Include="Data\DataStruct\DataStructEnumerator.cs" />
     <Compile Include="Data\DataStruct\IDataStruct.cs" />
     <Compile Include="Data\DataStruct\JsonDataStruct.cs" />
     <Compile Include="Data\DataStruct\LuaDataStruct.cs" />
+    <Compile Include="Game\DuelArena.cs" />
+    <Compile Include="Game\GameNotDoneException.cs" />
+    <Compile Include="Game\IGameInstance.cs" />
+    <Compile Include="Game\Reassembly.cs" />
     <Compile Include="IO\DataParse.cs" />
     <Compile Include="IO\IDataParser.cs" />
     <Compile Include="IO\JsonParser.cs" />

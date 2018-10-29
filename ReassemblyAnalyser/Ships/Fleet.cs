@@ -26,7 +26,9 @@ namespace ReassemblyAnalyser.Ships
             string total = GetHeader();
             for (int i = 0; i < InternalBlueprints.Length; i++)
             {
-                total += InternalBlueprints[i].GetRawData() + ",";
+                total += InternalBlueprints[i].GetRawData();
+                if (i != InternalBlueprints.Length - 1)
+                    total += ",";
             }
             total += GetFooter();
             return total;
